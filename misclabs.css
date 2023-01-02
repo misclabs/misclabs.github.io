@@ -1,0 +1,29 @@
+body{
+	background:#1a1a1a;
+	color:#7a92b3;
+	text-rendering:optimizeLegibility;
+	margin:0;
+	font-size: 14pt;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	font-weight:300
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+code,samp,kbd,command,var,pre{
+	font-family:'Fira Code',Hack,'Anonymous Pro',Dina,Terminus,Input,'JetBrains Mono','DejaVu Sans Mono','Source Code Pro','Cascadia Code',Consolas,monospace;
+}
+body ::selection{background:#7a92b3; color:#67a9ff}
+body a:link{color:#b3d4ff; text-decoration:none}
+body a:visited{color:#b3d4ff}
+body a:hover{color:#b3d4ff; text-decoration:underline}
+body a:active{color:#b3d4ff}
+canvas { padding:0; }
+.mainContent{width:854px;margin:0 auto 0;padding:0}
+.sz2160p { width: 3840px; height: 2160px;	}
+.sz1440p { width: 2560px; height: 1440px;	}
+.sz1080p { width: 1920px; height: 1080px;	}
+.sz720p { width: 1280px; height: 720px;	}
+.sz480p { width: 854px; height: 480px;	}
+.sz360p { width: 640px; height: 360px;	}
+.sz240p { width: 426px; height: 240px;	}

@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>CSS Notebook</title>
+<!-- <link href="/css-mint.min.css" rel="stylesheet" type="text/css" media="all"> -->
+<!-- <link href="/misclabs.css" rel="stylesheet" type="text/css" media="all"> -->
+<style type="text/css">
+p {
+	color: black;
+}
+</style>
+</head><body>
+<div class="note">
+# CSS Notebook
+
+*Note*: these are just my personal notes and experiments. You're welcome to look and used them, but they're a mess and I don't do a any clean-up.
+
+## Tags
+
+For external use `link` tag in `head`. e.g. `<link href="sytle.css" rel="stylesheet" />`
+
+For embedded use `style` tag in `head`. e.g. `<sytle type="text/css"></sytle>`
+
+`style` attribute?
+
+## Rules
+`RULESET = SELECTORS { DECLARATIONS }`
+`SELECTOR = tag|.class|#id`
+`DECLARATION = PROPERTY: VALUE;`
+
+### Other SELECTORS
+Attribute: `img[src]` selects `<img src="...">` elements, but not `<img>`
+Pseudo-class: `a:hover`
+[MDN Selectors Guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+
+e.g.
+```
+p, li, h1 {
+	color: red;
+	border: 1px solid black;
+}
+```
+
+## Box Model
+Most elements can be thought of as boxes. Each box has properties like:
+- `padding`: space around content.
+- `border`: line around the padding.
+- `margin`: space around outside of the border.
+- `width`, `height`:
+- `background`, `background-color`:
+- `color`:
+- `display`: display mode
+
+For values that have a top,bottom,left,right values:
+- 0: all four are set
+- 0 1: 0 is top/bottom, 1 is left/right
+- 0 1 2: 0 top, 1 is left/right, 2 is bottom
+- 0 1 2 3: 0 top, 1 right, 2 bottom, 3 left
+<style type="text/css">
+#boxModel {
+	border:1px solid black;
+	margin:0;
+	padding:0;
+	background-color: red;
+}	
+#boxModel div {
+	margin:8px;
+	border:1px solid red;
+	padding:8px;
+	background-color: green;
+}
+#boxModel div p {
+	margin:0;
+	padding:0;
+	background-color: blue;
+}
+</style>
+<div id="boxModel"><div><p>Content</p></div></div>
+
+[Bookmark](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+
+</div>
+
+<script src="/marked.min.js"></script>
+<script src="mnb.js"></script>
+<script>
+	window.addEventListener("load", function initializePage(evt) {
+		"use strict"
+		try {
+			window.removeEventListener(evt.type, initializePage, false);
+
+			mnbRndrMrkdwnByCls('note');
+		} catch (err) {
+			msgEl.innerHTML = err;
+		}
+	}, false);	
+</script>
+</body></html>

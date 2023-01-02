@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>WebGL Notebook</title>
+<link href="/css-mint.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/misclabs.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+</style>
+</head><body>
+<div class="mainContent">
+	<p id="msg"></p>
+	<div class="note">
+# WebGL Notebook
+
+<canvas id="demo1" class="sz240p">Canvas not supported. :(</canvas>
+
+<em>Note</em>: these are just my personal notes and experiments. You're welcome to look and used them, but they're a mess and I don't do a lot of clean-up or refactoring. If you're looking for an introduction to WebGL [WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html) is where I got my start. It's fantastic.
+
+## WebGL 
+is a point, line, and triangle rasterization engine that runs on the GPU. There are two functions that run on the GPU. The vertex shader which processes each point of geometry, and the fragment shader which processes each fragment/pixel. Shaders use GLSL and a vertex+fragment shader pair is called a program.
+
+In general you call various WebGL functions to setup rendering state and then `gl.drawArrays` or `gl.drawElements` to execute a shader program. There are four ways a shader program receives data: 
+
+## Buffers, Uniforms, Textures, Varyings
+
+**Buffers** are arrays of binary data passed to the vertex shader (e.g. positions, texture coordinates, vertex colors, etc.) **Attributes** describe the data in buffers (e.g. 3 32bit floats per position; can include initial offest into the buffer and stride.) Each entry in a buffer results in an invocation of the vertex shader.
+
+**Uniforms** are globals avaliable across executions of the shader program.
+
+**Textures** are arrays of data that can be randomly accessed in a shader program (typically image data.)
+
+**Varyings** are values passed from the vertex shader to the fragment shader. The values are usually interpolated.
+
+## Shaders
+At it's most basic a **vertex shader** outputs positions in clip space (values -1 to +1 no matter the size of the canvas.)
+
+### Passing Buffer Data to a Shader
+- Lookup the attribute location during initial setup w/ `gl.getAttribLocation`
+- Create a buffer w/ `gl.createBuffer`
+- Bind to buffer to a **bind point** w/ `g.bindBuffer`
+- Put data in the buffer w/ `gl.bufferData`
+
+WebGL uses strongly typed data, so buffer data is passed using `Float32Array`. I haven't kept up with Javascript, so I don't really know what this is.
+
+## Viewport, Canvas Size, Clip Space
+Canvas size, i.e. canvas.clientWidth, canvas.clientHeight: the size of the canvas in CSS pixels. Best set with CSS.
+
+canvas.width & canvas.height should be set to match clientWidth & clientHeight
+
+Use `gl.viewport` to tell WebGL how to convert clip space coordinates to screen space pixels.
+`gl.viewport(0,0,gl.canvas.width, gl.canvas.height)` maps `-1 to +1` x to `0 to gl.canvas.width` and the cooresponding y valuse.
+
+![A graph showing clip space goes form -1 to +1 on the x and y axes with 0,0 in the middle](clipSpace.png "Clip Space")
+
+Demo using screen coordinates:
+
+<canvas id="demo2" class="sz240p"></canvas>
+
+Demo using uniform fragment color:
+
+<canvas id="uniformColorDemo" class="sz240p"></canvas>
+
+## Open Questions and Research Topics
+What exactly is Javascript `Float32Array`?
+For viewport resizing which is better: gl.drawingBufferWidth+gl.drawingBufferHeight or 
+Display size vs. viewport?: [WebBL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html)
+
+`window.devicePixelRatio` is the ratio of CSS pixels to actual screen pixels.
+
+```
+gl.clearColor(0, 0, 0, 0);
+gl.clear(gl.COLOR_BUFFER_BIT);
+
+gl.useProgram(shaderProgram);
+gl.enableVertexAttribArray(clipPositionAttrLoc);
+
+gl.bindBuffer(gl.ARRAY_BUFFER, clipPositionBuffer);
+// Tell the attribute how to get data out of the clipPositionBuffer
+let size = 2; // 2 components per iteration
+let type = gl.FLOAT; // component type
+let normalize = false; // don't normalize the data
+let stride = 0; // 0 = size * sizeof(type)
+let offset = 0; // start at the beginning of the buffer
+gl.vertexAttribPointer(clipPositionAttrLoc, size, type, normalize, stride, offset);
+```
+## Sources
+[WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html)
+	</div>
+</div>
+
+<script id="clipSpaceVertexShader" type="notjs">
+// an attribute is input from a buffer
+attribute vec4 clipPosition;
+
+void main() {
+	// vertex shaders must set gl_Position
+	gl_Position = clipPosition;
+}
+</script>
+<script id="constFragmentShader" type="notjs">
+// fragment shaders must set the precision
+precision mediump float;
+
+void main() {
+	// fragment shaders must set gl_FragColor
+	gl_FragColor = vec4(1, 0, 0, 1);
+}
+</script>
+<script src="/marked.min.js"></script>
+<script src="mnb.js"></script>
+<script src="webgl.js"></script>
+</body></html>

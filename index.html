@@ -1,18 +1,37 @@
+<!DOCTYPE html><html><head>
+<title>Misc. Labs</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="viewport" content="width=600, initial-scale=1">
+<link href="misclabs.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+	#splsh{position:relative; width:640px; margin:128px auto; padding:0}
+	#splsh img{display:block; margin:0 auto; padding:64px 0; width:288px; height:184}
+	#bgCnvs{position:absolute; top:0; left:0; width:100%; height: 100%}
+</style>
+</head><body>
+<div id="splsh">
+	<a href="https://misclabs.itch.io/">
+		<img src="misc_labs_logo.svg" onerror="this.src='misc_labs_logo.png'; this.onerror=null;">
+		<canvas id="bgCnvs"></canvas>
+	</a>
+</div>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Misc. Labs</title>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="viewport" content="width=600, initial-scale=1">
-  </head>
-  <body class="main">
-    <div id="site_header">
-      <a href="https://misclabs.itch.io/">
-        <img id="header_logo" src="misc_labs_logo.svg" onerror="this.src='misc_labs_logo.png'; this.onerror=null;">
-      </a>
-      <a rel="me" href="https://peoplemaking.games/@jess"></a>
-    </div>
-  </body>
-</html>
+<a rel="me" href="https://peoplemaking.games/@jess"></a>
+<script id="vertSrc" type="GLSL">
+attribute vec2 scrPos;
+uniform vec2 scrSz;
+void main() {
+	vec2 clpPos = ((scrPos / scrSz) * 2.0) - 1.0;
+	gl_Position = vec4(clpPos * vec2(1, -1), 0, 1);
+}
+</script>
+<script id="fragSrc" type="GLSL">
+precision mediump float;
+uniform vec4 col;
+void main() {
+	gl_FragColor = col;
+}
+</script>
+<script src="mgl.js"></script>
+<script src="index.js"></script>
+</body></html>
