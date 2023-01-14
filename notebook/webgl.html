@@ -18,13 +18,13 @@
 ## WebGL 
 is a point, line, and triangle rasterization engine that runs on the GPU. There are two functions that run on the GPU. The vertex shader which processes each point of geometry, and the fragment shader which processes each fragment/pixel. Shaders use GLSL and a vertex+fragment shader pair is called a program.
 
-In general you call various WebGL functions to setup rendering state and then `gl.drawArrays` or `gl.drawElements` to execute a shader program. There are four ways a shader program receives data: 
+In general you call various WebGL functions to setup rendering state and then `gl.drawArrays` or `gl.drawElements` to execute a shader program. There are three ways a shader program receives data: 
 
-## Buffers, Uniforms, Textures, Varyings
+## Attributes, Uniforms, Textures, Varyings
 
-**Buffers** are arrays of binary data passed to the vertex shader (e.g. positions, texture coordinates, vertex colors, etc.) **Attributes** describe the data in buffers (e.g. 3 32bit floats per position; can include initial offest into the buffer and stride.) Each entry in a buffer results in an invocation of the vertex shader.
+**Attributes** are arrays of per-vertex data passed to the vertex shader (e.g. positions, texture coordinates, vertex colors, etc.) **Attributes** describe the data in buffers (e.g. 3 32bit floats per position; can include initial offest into the buffer and stride.) Each entry in a buffer results in an invocation of the vertex shader.
 
-**Uniforms** are globals avaliable across executions of the shader program.
+**Uniforms** are per-draw call data passed to the shader.
 
 **Textures** are arrays of data that can be randomly accessed in a shader program (typically image data.)
 

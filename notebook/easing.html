@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Easing Notebook</title>
+<link href="/css-mint.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/misclabs.css" rel="stylesheet" type="text/css" media="all">
+<link href="notebook.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+</style>
+</head><body>
+<div class="note">
+# Easing Notebook
+
+<canvas id="demo" class="sz480p"></canvas>
+
+<em>Note</em>: these are just my personal notes and experiments. You're welcome to look and used them, but they're a mess and won't be cleaned-up.
+
+## Terms and Uses
+- 1D Nonlinear Transformations
+- Easing functions on Steroids
+- Normalized Utility Functions (AI)
+- Used in Juice, Animation, AI
+- SmoothStep, SmootherStep
+
+## Motiviations
+
+*Implicit* is a rule; does a test: are you on a circle? e.g. `x^2 + y^2 = 25`
+vs.
+*Parametric* takes a parameter and returns a value. e.g. `f(t) = [cos(t),sin(t)]1` Output can be multi-dimensional.
+
+Most important ranges: [0,1] and [-1,1]. [0,1] can be percentage (shadow, luminance, falloff, complete, damage, cost, etc.). [-1,1] useful for deviations (noise, perturbation, terrain & map generation, distribution, sinusoidal, pusling) and anytime there is a baseline with variation. 
+
+Note of taking a power of [0,1] range:
+- Lowers the value
+- Curve of odd/even powers being sideways-S/U shaped is not present in this range
+
+Outputs: color, position, AI disposition, transparency, etc.
+
+Opportunity: 
+- anytime you have a single float to change 
+- can be expressed as a single float
+- time is involved
+
+## Normalized Utility Functions (1D Normalized Nonlinear)
+Transform `t` in `P(t)` w/o caring what `t` is.
+
+*Normalized*:
+- Range is `[0,1]`
+- `P(0) = 0`
+- `P(1) = 1`
+
+*Nonlinear*: `P(t) != t`
+
+Easing is the best name. A.K.A filter functions (artists), lerping functions (wrong!), tweening functions (animation).
+
+Note: because `P(1) = 1` you always know where/when something will end
+
+### Range-mapping
+Mapping from range `m` to range `n` using an easing function. e.g. strength [3,18] to damage modifier [0, 5]
+```
+RangeMap(in, inStart, inEnd, outStart, outEnd)
+{
+	// in is assumed to be in [inStart, inEnd]
+	let out = in - inStart; // out is in [0, inEnd-inStart]
+	out /= (inEnd-inStart); // out is in [0,1]
+
+	out = ease(out); // out is in [0,1]
+
+	out *= (outEnd-outStart); // out is in [0, outRange]
+	return out + outStart; // return is in [outStart, outEnd]
+}
+```
+Anything that can be converted to [0,1] to anything that can be converted from [0,1]
+
+### Functions
+
+#### Techniques
+- Raise to power: `t^N`
+- Flip: `1-t`
+- Mix: `Mix(a,b,weight,t) = a+(b-a)*weight` or `(1-weight)*a + weight*b`
+- FakePow: `FakePow(x, 2.2) = (.8*x^2) + (.2*x^3)`
+- CrossFade: `CrossFade(a,b,t) = Mix(a,b,t,t)`
+- Scale: `Scale(Func,t) = t*Func(t)` Note: [0,1] * [0,1] = [0,1]
+- ReverseScale: `ReverseScale(Func,t) = (1-t)*Func(t)`
+- Nesting: `SmoothStop3(SmoothStart3(t)) = ???`
+
+Note on FakePow: Mix can be used to avoid using pow to fractional exponents:
+`SmoothStart2.2 = Mix(SmoothStart2, SmoothStart3, 0.2)` 99% accurate in [0,1] and 10x faster
+
+#### SmoothStartN
+`SmoothStartN(t) = t^N`
+
+`N` is typically `[2,6]`
+
+N > 4 should remove jerk
+
+#### SmoothStopN
+
+SmoothStop is Flip => Pow => Flip. Flip is `1-t`.
+
+`SmoothStopN(t) = 1 - (1-t)^N`
+
+#### SmoothStepN
+
+CrossFade(SmoothStartN, SmoothStopN, t)
+
+#### ArchN
+`Arch2(t) = Scale(Flip(t)) = t*(1-t)`
+
+#### BellCurveN
+`BellCurve6(t) = SmoothStop3(t)*SmoothStart3(t)
+
+#### Gamma Correction
+FakePow2.2 = `t^2.2`
+
+#### Bounce
+Abs(Sin(t))
+### Demo
+Select function and show: scale, alpha, 1D position, this effects togehter, and show the graph!
+
+### Questions and Research Topics
+What other [0,1] transformations exist? How might this relate to transformations in different color spaces.
+
+NormalizedBezier: https://www.youtube.com/watch?v=mr5xkf6zSzk&ab_channel=GDC timecode: 26:00
+
+## Misc.
+*sqrt* is slow. *pow* is even slower (it can do sqrt).
+
+SmoothStart is a better name than EaseIn; 4 better than Quad (less ambiguity). A train easing into a station is the opposite of EaseIn, Quadratic is 2nd order polynomial. Names like EaseInQuad are bad.
+
+## References
+[Fast and Funky 1D Nonlinear Transformations](https://www.youtube.com/watch?v=mr5xkf6zSzk) by Squirrel Eiserloh
+
+</div>
+
+<script src="/marked.min.js"></script>
+<script src="/mgl.js"></script>
+<script src="mnb.js"></script>
+<script id="vertSrc" type="GLSL">
+attribute vec2 scrPos;
+uniform vec2 scrSz;
+void main() {
+	vec2 clpPos = ((scrPos / scrSz) * 2.0) - 1.0;
+	gl_Position = vec4(clpPos * vec2(1, -1), 0, 1);
+}
+</script>
+<script id="fragSrc" type="GLSL">
+precision mediump float;
+uniform vec4 col;
+void main() {
+	gl_FragColor = col;
+}
+</script>
+<script>
+function smoothStart2(t) { return t*t; }
+function smoothStart3(t) { return t*t*t; }
+function smoothStart4(t) { return t*t*t*t; }
+function smoothStop2(t) { let r=1-t; return 1-r*r; }
+function smoothStop3(t) { let r=1-t; return 1-r*r*r; }
+function smoothStop4(t) { let r=1-t; return 1-r*r*r*r; }
+function mix(a, b, w, t) { return (1-w)*a + w*b; }
+function crossFade(a, b, t) { return mix(a, b, t, t); }
+function smoothStep2(t) { return crossFade(smoothStart2(t), smoothStop2(t), t); }
+function arch2(t) { return t*(1-t); }
+function bellCurve6(t) { return smoothStop3(t)*smoothStart3(t); }
+
+
+function initDrawingContext(canvas) {
+	let {gc, prog} = mglInitCnvs(document.querySelector("#demo"), 
+			document.querySelector("#vertSrc").text,
+			document.querySelector("#fragSrc").text);
+
+	let scrSzLoc = gc.getUniformLocation(prog, "scrSz");
+	let colLoc = gc.getUniformLocation(prog, "col");
+	let scrPosLoc = gc.getAttribLocation(prog, "scrPos");
+	let scrPosBuf = gc.createBuffer();
+
+	let posDt = [];
+			
+	return {
+		beginDraw: function() {
+			posDt.length = 0;
+		},
+		endDraw: function() {
+			gc.enableVertexAttribArray(scrPosLoc);
+			gc.bindBuffer(gc.ARRAY_BUFFER, scrPosBuf);
+			gc.bufferData(gc.ARRAY_BUFFER, posDt, gc.STATIC_DRAW);		
+			gc.vertexAttribPointer(scrPosLoc, 2, gc.FLOAT, false, 0, 0);
+			gc.drawArrays(gc.TRIANGLES, 0, posDt.length/2);	
+		},
+		rect: function(x, y, w, h) {
+			const x2=x+w, y2=y+h;
+			posDt.push(
+				x,y, x2,y, x2,y2,
+				x,y2, x,y, x22,y2);
+		},
+		// TODO(jw): endDraw beginDraw?
+	};
+}
+
+window.addEventListener("load", function initializePage(evt) {
+	"use strict"
+	try {
+		window.removeEventListener(evt.type, initializePage, false);
+
+		mnbRndrMrkdwnByCls('note');
+
+		let {gc, prog} = mglInitCnvs(document.querySelector("#demo"), 
+			document.querySelector("#vertSrc").text,
+			document.querySelector("#fragSrc").text);
+
+	} catch (err) {
+		msgEl.innerHTML = err;
+	}
+}, false);	
+</script>
+</body></html>
