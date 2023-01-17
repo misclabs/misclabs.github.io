@@ -5,12 +5,30 @@
 <link href="/misclabs.css" rel="stylesheet" type="text/css" media="all">
 <link href="notebook.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
+.dmWrap{margin:0;padding:0;width:854px;height:240px;}
+.dmWrap canvas{float:right;}
 </style>
 </head><body>
-<div class="note">
+<div class="nt">
 # Easing Notebook
 
-<canvas id="demo" class="sz480p"></canvas>
+<div class="dmWrap">
+	<canvas id="dm" class="sz240p"></canvas>
+	<!-- <div><label for="dmX">X</label><input id="dmX" data-key="x" data-v-id="dmXv" type="range" min="0" max="350" value="0"><label id="dmXv">0</label></div> -->
+	<label for="slctEs">Ease</label><select id="slctEs">
+		<option value="lnr" selected>Linear</option>
+		<option value="smthStrt2">Smooth start 2</option>
+		<option value="smthStrt3">Smooth start 3</option>
+		<option value="smthStrt4">Smooth start 4</option>
+		<option value="smthStop2">Smooth stop 2</option>
+		<option value="smthStop3">Smooth stop 3</option>
+		<option value="smthStop4">Smooth stop 4</option>
+		<option value="smthStep2">Smooth step 2</option>
+		<option value="arch2">Arch 2</option>
+		<option value="bllcrv6">Bell curve 6</option>
+	</select>
+	<button id="btnPlyPs" type="button">Pause</button>
+</div>
 
 <em>Note</em>: these are just my personal notes and experiments. You're welcome to look and used them, but they're a mess and won't be cleaned-up.
 
@@ -135,82 +153,93 @@ SmoothStart is a better name than EaseIn; 4 better than Quad (less ambiguity). A
 <script src="/marked.min.js"></script>
 <script src="/mgl.js"></script>
 <script src="mnb.js"></script>
-<script id="vertSrc" type="GLSL">
-attribute vec2 scrPos;
-uniform vec2 scrSz;
-void main() {
-	vec2 clpPos = ((scrPos / scrSz) * 2.0) - 1.0;
-	gl_Position = vec4(clpPos * vec2(1, -1), 0, 1);
-}
-</script>
-<script id="fragSrc" type="GLSL">
-precision mediump float;
-uniform vec4 col;
-void main() {
-	gl_FragColor = col;
-}
-</script>
 <script>
-function smoothStart2(t) { return t*t; }
-function smoothStart3(t) { return t*t*t; }
-function smoothStart4(t) { return t*t*t*t; }
-function smoothStop2(t) { let r=1-t; return 1-r*r; }
-function smoothStop3(t) { let r=1-t; return 1-r*r*r; }
-function smoothStop4(t) { let r=1-t; return 1-r*r*r*r; }
+function lnr(t) { return t }
+function smthStrt2(t) { return t*t; }
+function smthStrt3(t) { return t*t*t; }
+function smthStrt4(t) { return t*t*t*t; }
+function smthStop2(t) { let r=1-t; return 1-r*r; }
+function smthStop3(t) { let r=1-t; return 1-r*r*r; }
+function smthStop4(t) { let r=1-t; return 1-r*r*r*r; }
 function mix(a, b, w, t) { return (1-w)*a + w*b; }
 function crossFade(a, b, t) { return mix(a, b, t, t); }
-function smoothStep2(t) { return crossFade(smoothStart2(t), smoothStop2(t), t); }
+function smthStep2(t) { return crossFade(smthStrt2(t), smthStop2(t), t); }
 function arch2(t) { return t*(1-t); }
-function bellCurve6(t) { return smoothStop3(t)*smoothStart3(t); }
+function bllcrv6(t) { return smthStop3(t)*smthStrt3(t); }
 
-
-function initDrawingContext(canvas) {
-	let {gc, prog} = mglInitCnvs(document.querySelector("#demo"), 
-			document.querySelector("#vertSrc").text,
-			document.querySelector("#fragSrc").text);
-
-	let scrSzLoc = gc.getUniformLocation(prog, "scrSz");
-	let colLoc = gc.getUniformLocation(prog, "col");
-	let scrPosLoc = gc.getAttribLocation(prog, "scrPos");
-	let scrPosBuf = gc.createBuffer();
-
-	let posDt = [];
-			
-	return {
-		beginDraw: function() {
-			posDt.length = 0;
-		},
-		endDraw: function() {
-			gc.enableVertexAttribArray(scrPosLoc);
-			gc.bindBuffer(gc.ARRAY_BUFFER, scrPosBuf);
-			gc.bufferData(gc.ARRAY_BUFFER, posDt, gc.STATIC_DRAW);		
-			gc.vertexAttribPointer(scrPosLoc, 2, gc.FLOAT, false, 0, 0);
-			gc.drawArrays(gc.TRIANGLES, 0, posDt.length/2);	
-		},
-		rect: function(x, y, w, h) {
-			const x2=x+w, y2=y+h;
-			posDt.push(
-				x,y, x2,y, x2,y2,
-				x,y2, x,y, x22,y2);
-		},
-		// TODO(jw): endDraw beginDraw?
-	};
+function newTckr(){
+	let strtS=performance.now()/1000.0-Number.MIN_VALUE
+	let pub={
+		dtS:0,
+		tmS:0,
+		tck:()=>{
+			let t=performance.now()/1000.0-strtS
+			pub.dtS=t-pub.tmS
+			pub.tmS=t
+		}
+	}
+	return pub
 }
 
-window.addEventListener("load", function initializePage(evt) {
-	"use strict"
-	try {
-		window.removeEventListener(evt.type, initializePage, false);
-
-		mnbRndrMrkdwnByCls('note');
-
-		let {gc, prog} = mglInitCnvs(document.querySelector("#demo"), 
-			document.querySelector("#vertSrc").text,
-			document.querySelector("#fragSrc").text);
-
-	} catch (err) {
-		msgEl.innerHTML = err;
+function newTwn(durS,strt,end,updtFn,esFn){
+	return {durS,strt,end,updtFn,esFn,tS:0,dir:1.0}
+}
+function tckTwn(twn,dtS){
+	twn.updtFn(twn,dtS)
+	return twn.strt+(twn.end-twn.strt)*twn.esFn(twn.tS/twn.durS)
+}
+function updtPngPng(twn,dtS){
+	twn.tS+=dtS*twn.dir
+	if(twn.tS>twn.durS) {
+		twn.dir=-1.0
+		twn.tS=twn.durS-(twn.tS-twn.durS)
+	} else if(twn.tS<0) {
+		twn.dir=1.0
+		twn.tS=-twn.tS
 	}
-}, false);	
+}
+
+window.addEventListener("load", function ldPg(evnt){
+	"use strict"
+	window.removeEventListener(evnt.type,ldPg);
+	mnbRndrMrkdwnByCls('nt')
+	let isPlyng=true
+	let esMp={lnr,smthStrt2,smthStrt3,smthStrt4,smthStop2,smthStop3,smthStop4,smthStep2,arch2,bllcrv6}
+	let twn=newTwn(2, 0, 1, updtPngPng, lnr)
+	document.querySelector("#slctEs").addEventListener("change",(evnt)=>{
+		evnt.preventDefault()
+		//console.log("target",evnt.target,"currentTarget",evnt.currentTarget)
+		let opts=evnt.target.options;
+		twn.esFn=esMp[opts[opts.selectedIndex].value]
+		console.log("selected",opts[opts.selectedIndex],"map",esMp,"fn",twn.esFn)
+	})
+	document.querySelector("#btnPlyPs").addEventListener("click",(evnt)=>{
+		if (isPlyng) {
+			evnt.target.innerText = "Play"
+			isPlyng=false
+		} else {
+			evnt.target.innerText = "Pause"
+			isPlyng=true
+		}
+	})
+	let col=[0,1,0, 1]
+	let dc=mglNewDc(document.querySelector("#dm"))
+	let tckr=newTckr() 
+	let val=0
+	setInterval(()=>{
+		tckr.tck()
+		if (isPlyng) {val=tckTwn(twn, tckr.dtS)}
+		dc.begin()
+		dc.rect(170,60,100,100, 0, val, col)
+		dc.rect(280,60,100,100, 0, 1, [val,val,val,1])
+		dc.rect(15+315*val,125,10,10, 0, 1, col)
+		
+		dc.rect(60,60,100,100, 0, 1, [0.1,0.1,0.1,1])
+		for (let i=0; i<100; ++i) {
+			dc.rect(10+i,110-twn.esFn(i/100.0)*100,1,1, 0, 1, col)
+		}
+		dc.end()
+	}, 1000/30)
+});	
 </script>
 </body></html>
