@@ -17,21 +17,8 @@
 </div>
 
 <a rel="me" href="https://peoplemaking.games/@jess"></a>
-<script id="vertSrc" type="GLSL">
-attribute vec2 scrPos;
-uniform vec2 scrSz;
-void main() {
-	vec2 clpPos = ((scrPos / scrSz) * 2.0) - 1.0;
-	gl_Position = vec4(clpPos * vec2(1, -1), 0, 1);
-}
-</script>
-<script id="fragSrc" type="GLSL">
-precision mediump float;
-uniform vec4 col;
-void main() {
-	gl_FragColor = col;
-}
-</script>
+<script src="msc.js"></script>
 <script src="mgl.js"></script>
+<script src="mes.js"></script>
 <script src="index.js"></script>
 </body></html>
