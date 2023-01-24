@@ -1,7 +1,14 @@
 window.addEventListener("load",function pgLd(evnt){
 	"use strict"
 	window.removeEventListener(evnt.type,pgLd,false)
-	let cnvs=document.querySelector("#bgCnvs")
+	let splshA=this.document.querySelector("#splshA")
+	let img=document.createElement("img")
+	img.setAttribute("src","misc_labs_logo.svg")
+	img.style.visibility="hidden"
+	splshA.appendChild(img)
+	let cnvs=document.createElement("canvas")
+	cnvs.style.visibility="hidden"
+	splshA.appendChild(cnvs)
 	let dc=mglNewDc(cnvs)
 	dc.clrCol=[26/256.0,26/256.0,26/256.0,1]
 	let {w,h}=dc.scrSz()
@@ -27,6 +34,8 @@ window.addEventListener("load",function pgLd(evnt){
 				[0,0,0,0])
 		}
 		dc.end()
+		img.style.visibility="visible"
+		cnvs.style.visibility="visible"
 		if(val>=1){
 			clearInterval(tickId)
 			dc.begin();dc.end()
