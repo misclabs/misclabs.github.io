@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head>
+<title>TIC-80 tiny computer</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/misclabs.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+	body{width:854px;margin:0 auto 0;padding:0}
+</style>
+</head><body>
+
+<div class="game sz480p">
+	<canvas class="sz480p" style="image-rendering: pixelated;" id="canvas" oncontextmenu="event.preventDefault()" onmousedown="window.focus()"></canvas>
+</div>
+<p>
+	Created with <a href="https://tic80.com/">TIC-80</a> after doing the <a href="https://tcc.lovebyte.party/">Lovebyte Tiny Code Christmas 2022</a> (months late, lol). 
+	<a href="https://lospec.com/palette-list/shido-cyberneon">Color palette</a> by <a href="https://lospec.com/shidoengie">Shidoengie</a>.
+	Good times!
+</p>
+
+<script>
+	var Module = {canvas: document.getElementById('canvas'), arguments:['cart.tic']};
+</script>
+<script src="tic80.js"></script>
+</body></html>
