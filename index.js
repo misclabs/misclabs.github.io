@@ -43,5 +43,5 @@ window.addEventListener("load",function pgLd(evnt){
 		}, 1000/60)
 	}
 	splshA.appendChild(img)
-	img.src="misc_labs_logo.svg"
+	img.src="misclabs_logo.svg"
 })
