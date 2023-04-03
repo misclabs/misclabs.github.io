@@ -2,11 +2,5 @@
 
 These are some of the tools, libraries, and inspiration used in this site.
 
-## CSS-Mint
-https://arunmichaeldsouza.github.io/CSS-Mint/
-
-## Marked
-https://marked.js.org/
-
 ## Canvas resize technique from WebGL Fundamentals
 https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html
