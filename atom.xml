@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Misc. Labs</title>
+    <subtitle>Misc. Labs is a bureaucratically ordained organization (pronounced Miscellaneous Labs) encapsulating a human and a rambling collection of games, thoughts, demos, experiments, mods, apps, and musings. The human is made of meat.</subtitle>
+    <link href="https://misclabs.com/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://misclabs.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-04-05T00:00:00+00:00</updated>
+    <id>https://misclabs.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Resource Dump for the Curious</title>
+        <published>2023-04-03T00:00:00+00:00</published>
+        <updated>2023-04-05T00:00:00+00:00</updated>
+        <author>
+          <name>Jess</name>
+        </author>
+        <link rel="alternate" href="https://misclabs.com/blog/dump-for-the-curious/" type="text/html"/>
+        <id>https://misclabs.com/blog/dump-for-the-curious/</id>
+        
+        <content type="html">&lt;p&gt;These are some things I&#x27;ve found useful or fun in the recent past.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;assets-and-art-tools&quot;&gt;Assets and Art Tools&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.kenney.nl&quot;&gt;Kenney&lt;&#x2F;a&gt; has created thousands of free &lt;a href=&quot;https:&#x2F;&#x2F;www.kenney.nl&#x2F;assets&quot;&gt;game assets&lt;&#x2F;a&gt;. Incredibly useful especially for prototyping.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&quot;&gt;LOSPEC&lt;&#x2F;a&gt; has a bunch of color palettes, pixel art tutorials, and resources. &lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&#x2F;palette-list&#x2F;shido-cyberneon&quot;&gt;Shido Cyberneon&lt;&#x2F;a&gt; is one of my favorite color palettes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.aseprite.org&#x2F;&quot;&gt;Aseprite&lt;&#x2F;a&gt; is a pixel art and animation editor.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.blockbench.net&#x2F;&quot;&gt;Blockbench&lt;&#x2F;a&gt; is a low-poly 3D editor.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fantasy-consoles-and-game-libraries&quot;&gt;Fantasy Consoles and Game Libraries&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tic80.com&#x2F;&quot;&gt;TIC-80&lt;&#x2F;a&gt; is an open-source fantasy console mimicing 8-bit systems of old. All the tools you need to make games are included.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wasm4.org&#x2F;&quot;&gt;WASM-4&lt;&#x2F;a&gt; is an minimalist fantasy console targeting WebAssembly. WASM-4 is bot as mature as TIC-80 but fun nonetheless.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.raylib.com&#x2F;&quot;&gt;raylib&lt;&#x2F;a&gt; is a minimalistic game development library. Easy-to-use and just plain fun.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;programming-with-kids&quot;&gt;Programming with Kids&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scratch.mit.edu&#x2F;&quot;&gt;Scratch&lt;&#x2F;a&gt; is a visual programming language and a set of tools for kids to learn programming and share projects.
+&lt;a href=&quot;https:&#x2F;&#x2F;arcade.makecode.com&#x2F;&quot;&gt;MakeCode Arcade&lt;&#x2F;a&gt; is a set of tools for kids to learn programming and make games.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;miscellany&quot;&gt;Miscellany&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;itch.io&#x2F;&quot;&gt;itch.io&lt;&#x2F;a&gt; is a game publishing platform for indie devs that has lots of creator friendly options.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;http:&#x2F;&#x2F;www.vlambeer.com&#x2F;toolkit&#x2F;&quot;&gt;Vlambeer Toolkit&lt;&#x2F;a&gt; is a great list of tools and talks for indie game developers.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Small Demo for LoveByte&#x27;s Tiny Code Christmas 2022</title>
+        <published>2023-03-20T00:00:00+00:00</published>
+        <updated>2023-03-20T00:00:00+00:00</updated>
+        <author>
+          <name>Jess</name>
+        </author>
+        <link rel="alternate" href="https://misclabs.com/blog/lovebyte-tiny-code-xmas-2022/" type="text/html"/>
+        <id>https://misclabs.com/blog/lovebyte-tiny-code-xmas-2022/</id>
+        
+        <content type="html">&lt;div class=&quot;game sz16x9_480&quot;&gt;
+	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9_480&quot; 
+		style=&quot;image-rendering: pixelated;&quot; 
+		oncontextmenu=&quot;event.preventDefault()&quot; 
+		onmousedown=&quot;window.focus()&quot;&gt;
+	&lt;&#x2F;canvas&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Created with &lt;a href=&quot;https:&#x2F;&#x2F;tic80.com&#x2F;&quot;&gt;TIC-80&lt;&#x2F;a&gt; after doing the &lt;a href=&quot;https:&#x2F;&#x2F;tcc.lovebyte.party&#x2F;&quot;&gt;Lovebyte Tiny Code Christmas 2022&lt;&#x2F;a&gt; (months late, lol). &lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&#x2F;palette-list&#x2F;shido-cyberneon&quot;&gt;Color palette&lt;&#x2F;a&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&#x2F;shidoengie&quot;&gt;Shidoengie&lt;&#x2F;a&gt;. Good times! &lt;&#x2F;p&gt;
+&lt;div&gt;
+	&lt;script&gt;
+		var Module = {
+			canvas: document.getElementById(&#x27;canvas&#x27;),
+			arguments:[&#x27;tcc22.tic&#x27;]
+		};
+	&lt;&#x2F;script&gt;
+	&lt;script src=&quot;&#x2F;tic80&#x2F;tic80.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+</feed>
