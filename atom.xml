@@ -28,8 +28,8 @@
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wasm4.org&#x2F;&quot;&gt;WASM-4&lt;&#x2F;a&gt; is an minimalist fantasy console targeting WebAssembly. WASM-4 is bot as mature as TIC-80 but fun nonetheless.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.raylib.com&#x2F;&quot;&gt;raylib&lt;&#x2F;a&gt; is a minimalistic game development library. Easy-to-use and just plain fun.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;programming-with-kids&quot;&gt;Programming with Kids&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scratch.mit.edu&#x2F;&quot;&gt;Scratch&lt;&#x2F;a&gt; is a visual programming language and a set of tools for kids to learn programming and share projects.
-&lt;a href=&quot;https:&#x2F;&#x2F;arcade.makecode.com&#x2F;&quot;&gt;MakeCode Arcade&lt;&#x2F;a&gt; is a set of tools for kids to learn programming and make games.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scratch.mit.edu&#x2F;&quot;&gt;Scratch&lt;&#x2F;a&gt; is a visual programming language and a set of tools for kids to learn programming and share projects.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arcade.makecode.com&#x2F;&quot;&gt;MakeCode Arcade&lt;&#x2F;a&gt; is a set of tools for kids to learn programming and make games.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;miscellany&quot;&gt;Miscellany&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;itch.io&#x2F;&quot;&gt;itch.io&lt;&#x2F;a&gt; is a game publishing platform for indie devs that has lots of creator friendly options.&lt;&#x2F;p&gt;
 &lt;p&gt;The &lt;a href=&quot;http:&#x2F;&#x2F;www.vlambeer.com&#x2F;toolkit&#x2F;&quot;&gt;Vlambeer Toolkit&lt;&#x2F;a&gt; is a great list of tools and talks for indie game developers.&lt;&#x2F;p&gt;
@@ -46,8 +46,10 @@
         <link rel="alternate" href="https://misclabs.com/blog/lovebyte-tiny-code-xmas-2022/" type="text/html"/>
         <id>https://misclabs.com/blog/lovebyte-tiny-code-xmas-2022/</id>
         
-        <content type="html">&lt;div class=&quot;game sz16x9_480&quot;&gt;
-	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9_480&quot; 
+        <content type="html">
+&lt;div class=&quot;game sz16x9_800&quot;&gt;
+	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9_800&quot; 
+		width=&quot;800&quot; height=&quot;450&quot;
 		style=&quot;image-rendering: pixelated;&quot; 
 		oncontextmenu=&quot;event.preventDefault()&quot; 
 		onmousedown=&quot;window.focus()&quot;&gt;
