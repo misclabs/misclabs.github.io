@@ -47,8 +47,9 @@
         <id>https://misclabs.com/blog/lovebyte-tiny-code-xmas-2022/</id>
         
         <content type="html">
-&lt;div class=&quot;game sz16x9_800&quot;&gt;
-	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9_800&quot; 
+
+&lt;div class=&quot;game&quot; style=&quot;display: flex; align-items:center; justify-content:center;&quot;&gt;
+	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9&quot; 
 		width=&quot;800&quot; height=&quot;450&quot;
 		style=&quot;image-rendering: pixelated;&quot; 
 		oncontextmenu=&quot;event.preventDefault()&quot; 
