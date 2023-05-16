@@ -5,8 +5,25 @@
     <link href="https://misclabs.com/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://misclabs.com/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-04-05T00:00:00+00:00</updated>
+    <updated>2023-05-16T00:00:00+00:00</updated>
     <id>https://misclabs.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>I&#x27;m Getting the Website Back Together</title>
+        <published>2023-05-16T00:00:00+00:00</published>
+        <updated>2023-05-16T00:00:00+00:00</updated>
+        <author>
+          <name>Jess</name>
+        </author>
+        <link rel="alternate" href="https://misclabs.com/blog/getting-the-website-back-together/" type="text/html"/>
+        <id>https://misclabs.com/blog/getting-the-website-back-together/</id>
+        
+        <content type="html">&lt;p&gt;So I&#x27;ve been putting the website back together. Hopefully I&#x27;ll have to time to make some regular posts and be able to share some fun little projects.&lt;&#x2F;p&gt;
+&lt;p&gt;For those that are curious the site is a simple static site hosted on GitHub pages (for now). Content is managed with &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; which is new to me, and I&#x27;m really liking it.&lt;&#x2F;p&gt;
+&lt;p&gt;The logo animation is done with javascript and &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;WebGL_API&quot;&gt;WebGL&lt;&#x2F;a&gt;. I&#x27;m using &lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;&quot;&gt;Node.js&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;webpack.js.org&#x2F;&quot;&gt;webpack&lt;&#x2F;a&gt; for testing, packaging, and some other scripty type stuff. Webpack is really slow for what I use it for, so I&#x27;d like to experiment with &lt;a href=&quot;https:&#x2F;&#x2F;esbuild.github.io&#x2F;&quot;&gt;esbuild&lt;&#x2F;a&gt; when I have a little time (hahaha).&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m pretty happy with how it&#x27;s coming together even if I see a million little things that could be improved.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Resource Dump for the Curious</title>
         <published>2023-04-03T00:00:00+00:00</published>
