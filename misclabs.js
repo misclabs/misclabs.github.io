@@ -1,1 +1,232 @@
-(()=>{"use strict";function t(t,e){t.tS>=t.durS||(t.tS=Math.min(t.durS,t.tS+e))}function e(t){return 1-(t=1-t)*t*t*t}function r(t,e,r){"string"==typeof e&&(e=n(t,t.VERTEX_SHADER,e)),"string"==typeof r&&(r=n(t,t.FRAGMENT_SHADER,r));var o=t.createProgram();if(t.attachShader(o,e),t.attachShader(o,r),t.linkProgram(o),t.getProgramParameter(o,t.LINK_STATUS))return o;var i=t.getProgramInfoLog(o);throw t.deleteProgram(o),new Error(i)}function n(t,e,r){var n=t.createShader(e);if(t.shaderSource(n,r),t.compileShader(n),t.getShaderParameter(n,t.COMPILE_STATUS))return n;var o=t.getShaderInfoLog(n);throw t.deleteShader(n),new Error(o)}function o(t){var e=window.devicePixelRatio,r=t.getBoundingClientRect(),n=r.width,o=r.height;t.width==Math.round(n*e)&&t.height==Math.round(o*e)||(t.width=t.clientWidth,t.height=t.clientHeight)}window.addEventListener("load",(function n(i){var a=document.getElementById("cr");a.addEventListener("click",(function(){var t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,e=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,r=window.screen.width,n=window.screen.height,o=document.body.clientWidth,i=document.body.clientHeight;a.innerText="scr:".concat(r,",").concat(n," vp:").concat(t,",").concat(e," b:").concat(o,",").concat(i)})),window.removeEventListener(i.type,n,!1);var c=this.document.querySelector("#splshA"),d=document.createElement("img");d.alt='An abstract blue and pink repesentation of a caffeine molecule with squares, hearts, and the text "Misc. Labs"',d.width=512,d.height=256,d.style.visibility="hidden",d.onload=function(){var n=document.createElement("canvas");n.style.visibility="hidden",c.appendChild(n);var i=function(t){var e=function(t,e,n){var o=t.getContext("webgl")||t.getContext("experimental-webgl");if(!o)throw new Error("Failed to initialize WebGL context for canvas ".concat(t.id,"."));return{gc:o,prog:r(o,"uniform vec2 scrSz;uniform vec4 trans;attribute vec2 scrPos;void main(){/* Scale */ vec2 pos=scrPos*trans.w; /* Rotate */ vec2 r=vec2(sin(trans.z),cos(trans.z)); pos=vec2(pos.x*r.y+pos.y*r.x, pos.y*r.y-pos.x*r.x); /* Translate */ pos=pos+trans.xy; /* Clip space */ pos=((pos / scrSz) * 2.0) - 1.0; gl_Position=vec4(pos * vec2(1, -1), 0, 1); }","precision mediump float;uniform vec4 col;void main(){gl_FragColor=col;}")}}(t),n=e.gc,i=e.prog;o(t);var a=n.getUniformLocation(i,"scrSz"),c=n.getUniformLocation(i,"col"),d=n.getUniformLocation(i,"trans"),s=n.getAttribLocation(i,"scrPos"),l=n.createBuffer(),h=[],u=[],v=!1,g={clrCol:[0,0,0,1],begin:function(){if(v)throw new Error("Already began drawing");v=!0,o(n.canvas);var t=g.scrSz(),e=t.w,r=t.h;n.viewport(0,0,e,r),n.clearColor(g.clrCol[0],g.clrCol[1],g.clrCol[2],g.clrCol[3]),n.clear(n.COLOR_BUFFER_BIT),n.useProgram(i),n.uniform2f(a,e,r)},end:function(){if(!v)throw new Error("Drawing never began");!function(t,e,r,o,i){var a=arguments.length>5&&void 0!==arguments[5]&&arguments[5];n.bindBuffer(n.ARRAY_BUFFER,e),n.enableVertexAttribArray(t),n.vertexAttribPointer(t,i,o,a,0,0),n.bufferData(n.ARRAY_BUFFER,r,n.DYNAMIC_DRAW)}(s,l,new Float32Array(h),n.FLOAT,2);for(var t=0;t<u.length;++t)n.uniform4fv(c,u[t].col4fv),n.uniform4fv(d,u[t].trans),n.drawArrays(n.TRIANGLES,u[t].dtStrt,u[t].dtCnt);h.length=0,u.length=0,v=!1},scrSz:function(){return{w:n.canvas.width,h:n.canvas.height}},tri:function(t,e,r,n,o,i,a){u.push({dtStrt:h.length/2,dtCnt:3,col4fv:a,trans:[0,0,0,1]}),h.push(t,e,r,n,o,i)},rect:function(t,e,r,n,o,i,a){var c=[-r/2,-n/2],d=[r/2,n/2];u.push({dtStrt:h.length/2,dtCnt:6,col4fv:a,trans:[t,e,o,i]}),h.push(c[0],c[1],r/2,-n/2,d[0],d[1],c[0],c[1],d[0],d[1],-r/2,n/2)}};return g}(n);i.clrCol=[26/256,26/256,26/256,1];for(var a=i.scrSz(),s=a.w,l=a.h,h=[],u=s/16,v=l/9,g=0;g<16;++g)for(var f=0;f<9;++f)h.push({x:g*u+u/2,y:f*v+v/2,w:u,h:v,s:0,r:0});var m,w,p=(m=performance.now()/1e3-Number.MIN_VALUE,w={dtS:0,tmS:0,tck:function(){var t=performance.now()/1e3-m;w.dtS=t-w.tmS,w.tmS=t}}),S={durS:3,strt:0,end:1,updtFn:t,esFn:e,tS:0,dir:1},b=setInterval((function(){p.tck();var t=function(t,e){return t.updtFn(t,e),t.strt+(t.end-t.strt)*t.esFn(t.tS/t.durS)}(S,p.dtS);i.begin();for(var e=0;e<h.length;++e)h[e].s=1.1*t,h[e].r=-(1-t)*Math.PI/2,i.rect(h[e].x,h[e].y,h[e].w,h[e].h,h[e].r,h[e].s,[0,0,0,0]);i.end(),d.style.visibility="visible",n.style.visibility="visible",t>=1&&(clearInterval(b),i.begin(),i.end(),n.parentNode.removeChild(n))}),1e3/60)},c.appendChild(d),d.src="images/misclabs_logo_hero.svg"}))})();
+(() => {
+  // code/msc.js
+  function mscNewTckr() {
+    let strtS = performance.now() / 1e3 - Number.MIN_VALUE;
+    let pub = {
+      dtS: 0,
+      tmS: 0,
+      tck: () => {
+        let t = performance.now() / 1e3 - strtS;
+        pub.dtS = t - pub.tmS;
+        pub.tmS = t;
+      }
+    };
+    return pub;
+  }
+
+  // code/mes.js
+  function mesNewTwn(durS, strt, end, updtFn, esFn) {
+    return { durS, strt, end, updtFn, esFn, tS: 0, dir: 1 };
+  }
+  function mesTckTwn(twn, dtS) {
+    twn.updtFn(twn, dtS);
+    return twn.strt + (twn.end - twn.strt) * twn.esFn(twn.tS / twn.durS);
+  }
+  function mesUpdtOnc(twn, dtS) {
+    if (twn.tS >= twn.durS)
+      return;
+    twn.tS = Math.min(twn.durS, twn.tS + dtS);
+  }
+  function mesSmthStop4(t) {
+    t = 1 - t;
+    return 1 - t * t * t * t;
+  }
+
+  // code/mgl.js
+  function mglInitCnvs(cnvs, vertSrc, fragSrc) {
+    let gc = cnvs.getContext("webgl") || cnvs.getContext("experimental-webgl");
+    if (!gc) {
+      throw new Error(`Failed to initialize WebGL context for canvas ${cnvs.id}.`);
+    }
+    return { gc, prog: mglInitProg(gc, vertSrc, fragSrc) };
+  }
+  function mglInitProg(gc, vertShdr, fragShdr) {
+    if (typeof vertShdr === "string") {
+      vertShdr = mglInitShdr(gc, gc.VERTEX_SHADER, vertShdr);
+    }
+    if (typeof fragShdr === "string") {
+      fragShdr = mglInitShdr(gc, gc.FRAGMENT_SHADER, fragShdr);
+    }
+    let prog = gc.createProgram();
+    gc.attachShader(prog, vertShdr);
+    gc.attachShader(prog, fragShdr);
+    gc.linkProgram(prog);
+    if (gc.getProgramParameter(prog, gc.LINK_STATUS)) {
+      return prog;
+    }
+    let log = gc.getProgramInfoLog(prog);
+    gc.deleteProgram(prog);
+    throw new Error(log);
+  }
+  function mglNewDc(cnvs) {
+    let { gc, prog } = mglInitCnvs(
+      cnvs,
+      "uniform vec2 scrSz;uniform vec4 trans;attribute vec2 scrPos;void main(){/* Scale */ vec2 pos=scrPos*trans.w; /* Rotate */ vec2 r=vec2(sin(trans.z),cos(trans.z)); pos=vec2(pos.x*r.y+pos.y*r.x, pos.y*r.y-pos.x*r.x); /* Translate */ pos=pos+trans.xy; /* Clip space */ pos=((pos / scrSz) * 2.0) - 1.0; gl_Position=vec4(pos * vec2(1, -1), 0, 1); }",
+      "precision mediump float;uniform vec4 col;void main(){gl_FragColor=col;}"
+    );
+    mglUpdateCnvsSz(cnvs);
+    let scrSzLoc = gc.getUniformLocation(prog, "scrSz");
+    let colLoc = gc.getUniformLocation(prog, "col");
+    let transLoc = gc.getUniformLocation(prog, "trans");
+    let posLoc = gc.getAttribLocation(prog, "scrPos");
+    let posBuf = gc.createBuffer();
+    let posDt = [], objs = [];
+    let bDrw = false;
+    let pub = {
+      clrCol: [0, 0, 0, 1],
+      begin: function() {
+        if (bDrw) {
+          throw new Error("Already began drawing");
+        }
+        bDrw = true;
+        mglUpdateCnvsSz(gc.canvas);
+        let { w: sw, h: sh } = pub.scrSz();
+        gc.viewport(0, 0, sw, sh);
+        gc.clearColor(pub.clrCol[0], pub.clrCol[1], pub.clrCol[2], pub.clrCol[3]);
+        gc.clear(gc.COLOR_BUFFER_BIT);
+        gc.useProgram(prog);
+        gc.uniform2f(scrSzLoc, sw, sh);
+      },
+      end: function() {
+        if (!bDrw) {
+          throw new Error("Drawing never began");
+        }
+        function initAttr(loc, buf, dt, cTyp, cCnt, cNrm = false) {
+          gc.bindBuffer(gc.ARRAY_BUFFER, buf);
+          gc.enableVertexAttribArray(loc);
+          gc.vertexAttribPointer(loc, cCnt, cTyp, cNrm, 0, 0);
+          gc.bufferData(gc.ARRAY_BUFFER, dt, gc.DYNAMIC_DRAW);
+        }
+        initAttr(posLoc, posBuf, new Float32Array(posDt), gc.FLOAT, 2);
+        for (let i = 0; i < objs.length; ++i) {
+          gc.uniform4fv(colLoc, objs[i].col4fv);
+          gc.uniform4fv(transLoc, objs[i].trans);
+          gc.drawArrays(gc.TRIANGLES, objs[i].dtStrt, objs[i].dtCnt);
+        }
+        posDt.length = 0;
+        objs.length = 0;
+        bDrw = false;
+      },
+      scrSz: function() {
+        return { w: gc.canvas.width, h: gc.canvas.height };
+      },
+      tri: function(x1, y1, x2, y2, x3, y3, col4fv) {
+        objs.push({ dtStrt: posDt.length / 2, dtCnt: 3, col4fv, trans: [0, 0, 0, 1] });
+        posDt.push(x1, y1, x2, y2, x3, y3);
+      },
+      rect: function(x, y, w, h, rot, s, col4fv) {
+        let lt = [-w / 2, -h / 2];
+        let br = [w / 2, h / 2];
+        objs.push({ dtStrt: posDt.length / 2, dtCnt: 6, col4fv, trans: [x, y, rot, s] });
+        posDt.push(
+          lt[0],
+          lt[1],
+          w / 2,
+          -h / 2,
+          br[0],
+          br[1],
+          lt[0],
+          lt[1],
+          br[0],
+          br[1],
+          -w / 2,
+          h / 2
+        );
+      }
+    };
+    return pub;
+  }
+  function mglInitShdr(gc, type, src) {
+    let shdr = gc.createShader(type);
+    gc.shaderSource(shdr, src);
+    gc.compileShader(shdr);
+    if (gc.getShaderParameter(shdr, gc.COMPILE_STATUS)) {
+      return shdr;
+    }
+    let log = gc.getShaderInfoLog(shdr);
+    gc.deleteShader(shdr);
+    throw new Error(log);
+  }
+  function mglUpdateCnvsSz(cnvs) {
+    const dpr = window.devicePixelRatio;
+    const { width, height } = cnvs.getBoundingClientRect();
+    if (cnvs.width != Math.round(width * dpr) || cnvs.height != Math.round(height * dpr)) {
+      cnvs.width = cnvs.clientWidth;
+      cnvs.height = cnvs.clientHeight;
+    }
+  }
+
+  // code/misclabs.jsx
+  document.addEventListener("DOMContentLoaded", function onMainPageLoad(evnt) {
+    "use strict";
+    let copyright = document.getElementById("cr");
+    copyright.addEventListener("click", () => {
+      const vpW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      const vpH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      const scW = window.screen.width;
+      const scH = window.screen.height;
+      const bW = document.body.clientWidth;
+      const bH = document.body.clientHeight;
+      copyright.innerText = `scr:${scW},${scH} vp:${vpW},${vpH} b:${bW},${bH}`;
+    });
+    window.removeEventListener(evnt.type, onMainPageLoad, false);
+    let splshA = document.querySelector("#splshA");
+    let img = document.createElement("img");
+    img.alt = 'An abstract blue and pink repesentation of a caffeine molecule with squares, hearts, and the text "Misc. Labs"';
+    img.width = 512;
+    img.height = 256;
+    img.style.visibility = "hidden";
+    img.onload = () => {
+      let cnvs = document.createElement("canvas");
+      cnvs.style.visibility = "hidden";
+      splshA.appendChild(cnvs);
+      let dc = mglNewDc(cnvs);
+      dc.clrCol = [26 / 256, 26 / 256, 26 / 256, 1];
+      let { w, h } = dc.scrSz();
+      let rects = [], cw = w / 16, ch = h / 9;
+      for (let i = 0; i < 16; ++i) {
+        for (let j = 0; j < 9; ++j) {
+          rects.push({
+            x: i * cw + cw / 2,
+            y: j * ch + ch / 2,
+            w: cw,
+            h: ch,
+            s: 0,
+            r: 0
+          });
+        }
+      }
+      let tckr = mscNewTckr();
+      let twn = mesNewTwn(3, 0, 1, mesUpdtOnc, mesSmthStop4);
+      let tickId = setInterval(() => {
+        tckr.tck();
+        let val = mesTckTwn(twn, tckr.dtS);
+        dc.begin();
+        for (let i = 0; i < rects.length; ++i) {
+          rects[i].s = val * 1.1;
+          rects[i].r = -(1 - val) * Math.PI / 2;
+          dc.rect(
+            rects[i].x,
+            rects[i].y,
+            rects[i].w,
+            rects[i].h,
+            rects[i].r,
+            rects[i].s,
+            [0, 0, 0, 0]
+          );
+        }
+        dc.end();
+        img.style.visibility = "visible";
+        cnvs.style.visibility = "visible";
+        if (val >= 1) {
+          clearInterval(tickId);
+          dc.begin();
+          dc.end();
+          cnvs.parentNode.removeChild(cnvs);
+        }
+      }, 1e3 / 60);
+    };
+    splshA.appendChild(img);
+    img.src = "images/misclabs_logo_hero.svg";
+  });
+})();

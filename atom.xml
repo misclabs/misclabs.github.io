@@ -5,8 +5,57 @@
     <link href="https://misclabs.com/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://misclabs.com/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-05-16T00:00:00+00:00</updated>
+    <updated>2023-05-22T00:00:00+00:00</updated>
     <id>https://misclabs.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Tittat: A Tiny WASM Experiment</title>
+        <published>2023-05-22T00:00:00+00:00</published>
+        <updated>2023-05-22T00:00:00+00:00</updated>
+        <author>
+          <name>Jess</name>
+        </author>
+        <link rel="alternate" href="https://misclabs.com/blog/tittat-a-tiny-wasm-experiment/" type="text/html"/>
+        <id>https://misclabs.com/blog/tittat-a-tiny-wasm-experiment/</id>
+        
+        <content type="html">&lt;p&gt;This is a small toy I wrote to experiment with WASM.&lt;&#x2F;p&gt;
+&lt;p&gt;It was written in C using &lt;a href=&quot;https:&#x2F;&#x2F;www.raylib.com&#x2F;&quot;&gt;raylib&lt;&#x2F;a&gt; and compiled with &lt;a href=&quot;https:&#x2F;&#x2F;emscripten.org&#x2F;&quot;&gt;emscripten&lt;&#x2F;a&gt;. Sounds were generated with &lt;a href=&quot;https:&#x2F;&#x2F;sfxr.me&#x2F;&quot;&gt;jsfxr&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Source code can be found &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;misclabs&#x2F;tittat&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;game&quot; style=&quot;display: flex; align-items:center; justify-content:center;&quot;&gt;
+	&lt;canvas id=&quot;canvas&quot; class=&quot;sz16x9&quot; 
+		style=&quot;image-rendering: pixelated;&quot; 
+		oncontextmenu=&quot;event.preventDefault()&quot; 
+		onmousedown=&quot;window.focus()&quot;
+		tabindex=-1&gt;
+		&lt;p&gt;Opps! The game that should display here isn&#x27;t working.
+			It might work on a different browser or computer. 
+			You can use this link to get back to this game: &lt;br&gt;&lt;br&gt; &lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;misclabs.com&amp;#x2F;blog&amp;#x2F;tittat-a-tiny-wasm-experiment&amp;#x2F;&quot;&gt;https:&amp;#x2F;&amp;#x2F;misclabs.com&amp;#x2F;blog&amp;#x2F;tittat-a-tiny-wasm-experiment&amp;#x2F;&lt;&#x2F;a&gt; &lt;&#x2F;p&gt;
+	&lt;&#x2F;canvas&gt;
+	&lt;script&gt;
+		var Module = {
+			canvas: document.getElementById(&quot;canvas&quot;),
+			print: console.log,
+		};
+		window.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+			window.addEventListener(&quot;keydown&quot;, 
+				(ev) =&gt; {
+					console.log(ev);
+					if ([&quot;Space&quot;, &quot;ArrowUp&quot;, &quot;ArrowDown&quot;, &quot;ArrowLeft&quot;, &quot;ArrowRight&quot;].indexOf(ev.code) &gt; -1) {
+						ev.preventDefault();
+					}
+				},
+				false
+			);
+		});
+	&lt;&#x2F;script&gt;
+	&lt;script src=&quot;tittat.js&quot; async&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;div&gt;
+
+
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>I&#x27;m Getting the Website Back Together</title>
         <published>2023-05-16T00:00:00+00:00</published>
@@ -71,6 +120,9 @@
 		style=&quot;image-rendering: pixelated;&quot; 
 		oncontextmenu=&quot;event.preventDefault()&quot; 
 		onmousedown=&quot;window.focus()&quot;&gt;
+		&lt;p&gt;Opps! The game that should display here isn&#x27;t working.
+			It might work on a different browser or computer. 
+			You can use this link to get back to this game: &lt;br&gt;&lt;br&gt; &lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;misclabs.com&amp;#x2F;blog&amp;#x2F;lovebyte-tiny-code-xmas-2022&amp;#x2F;&quot;&gt;https:&amp;#x2F;&amp;#x2F;misclabs.com&amp;#x2F;blog&amp;#x2F;lovebyte-tiny-code-xmas-2022&amp;#x2F;&lt;&#x2F;a&gt; &lt;&#x2F;p&gt;
 	&lt;&#x2F;canvas&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;Created with &lt;a href=&quot;https:&#x2F;&#x2F;tic80.com&#x2F;&quot;&gt;TIC-80&lt;&#x2F;a&gt; after doing the &lt;a href=&quot;https:&#x2F;&#x2F;tcc.lovebyte.party&#x2F;&quot;&gt;Lovebyte Tiny Code Christmas 2022&lt;&#x2F;a&gt; (months late, lol). &lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&#x2F;palette-list&#x2F;shido-cyberneon&quot;&gt;Color palette&lt;&#x2F;a&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;lospec.com&#x2F;shidoengie&quot;&gt;Shidoengie&lt;&#x2F;a&gt;. Good times! &lt;&#x2F;p&gt;
