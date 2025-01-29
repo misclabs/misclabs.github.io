@@ -1,6 +1,0 @@
-# Credits
-
-These are some of the tools, libraries, and inspiration used in this site.
-
-## Canvas resize technique from WebGL Fundamentals
-https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html
