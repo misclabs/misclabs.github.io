@@ -1,143 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
-
-<svg
-   version="1.1"
-   x="0px"
-   y="0px"
-   viewBox="0 0 48 48"
-   enable-background="new 0 0 288 184"
-   xml:space="preserve"
-   id="mlicon"
-   sodipodi:docname="misclabs_icon.svg"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   inkscape:export-filename="misclabs_icon_192x192.png"
-   inkscape:export-xdpi="384"
-   inkscape:export-ydpi="384"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-   id="namedview174"
-   pagecolor="#ffffff"
-   bordercolor="#000000"
-   borderopacity="0.25"
-   inkscape:showpageshadow="2"
-   inkscape:pageopacity="0.0"
-   inkscape:pagecheckerboard="0"
-   inkscape:deskcolor="#d1d1d1"
-   showgrid="true"
-   inkscape:zoom="9"
-   inkscape:cx="6"
-   inkscape:cy="4e+01"
-   inkscape:window-width="1278"
-   inkscape:window-height="1360"
-   inkscape:window-x="1273"
-   inkscape:window-y="0"
-   inkscape:window-maximized="0"
-   inkscape:current-layer="mlicon"
-   showguides="true"
-   shape-rendering="crispEdges"><inkscape:grid
-     type="xygrid"
-     id="grid1119"
-     originx="0"
-     originy="0" /></sodipodi:namedview>
-<defs
-   id="defs2">
-</defs>
-
-
-
-
-
-<rect
-   id="bg"
-   width="48"
-   height="48"
-   x="0"
-   y="0" /><path
-   id="m"
-   d="m 12.064,6.0156 v 3 3.0004 21 h 6 v -21 h 6 v 21 h 3 v -21 h 6 v 21 h 3 v -24.0004 -3 z"
-   style="fill:#67a9ff" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<path
-   id="hearts"
-   d="m 13,36 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z"
-   style="fill:#ff5cff" /></svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1080 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect x="0" y="0" width="1080" height="1080" style="fill:rgb(20,20,20);"/>
+    <g id="Atom">
+        <g id="Electron">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+        <g id="Electron1" serif:id="Electron" transform="matrix(-0.5,-0.866025,0.866025,-0.5,342.346,1277.65)">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+        <g id="Electron2" serif:id="Electron" transform="matrix(-0.5,0.866025,-0.866025,-0.5,1277.65,342.346)">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(0.833346,0,0,0.788721,57.8148,72.3994)">
+        <path d="M578.614,150.568L663.721,257.263L787.917,209.824L811.132,347.186L941.138,371.714L896.239,502.937L997.221,592.859L896.239,682.782L941.138,814.005L811.132,838.533L787.917,975.895L663.721,928.455L578.614,1035.15L493.506,928.455L369.31,975.895L346.096,838.533L216.089,814.005L260.988,682.782L160.006,592.859L260.988,502.937L216.089,371.714L346.096,347.186L369.31,209.824L493.506,257.263L578.614,150.568Z" style="fill:rgb(20,20,20);"/>
+    </g>
+    <g transform="matrix(0.744599,0,0,0.704727,109.165,122.196)">
+        <path d="M578.614,150.568L663.721,257.263L787.917,209.824L811.132,347.186L941.138,371.714L896.239,502.937L997.221,592.859L896.239,682.782L941.138,814.005L811.132,838.533L787.917,975.895L663.721,928.455L578.614,1035.15L493.506,928.455L369.31,975.895L346.096,838.533L216.089,814.005L260.988,682.782L160.006,592.859L260.988,502.937L216.089,371.714L346.096,347.186L369.31,209.824L493.506,257.263L578.614,150.568Z" style="fill:rgb(20,20,20);stroke:rgb(233,110,253);stroke-width:17.93px;"/>
+    </g>
+    <g transform="matrix(0.744599,0,0,0.704727,109.165,122.196)">
+        <path d="M578.614,150.568L663.721,257.263L787.917,209.824L811.132,347.186L941.138,371.714L896.239,502.937L997.221,592.859L896.239,682.782L941.138,814.005L811.132,838.533L787.917,975.895L663.721,928.455L578.614,1035.15L493.506,928.455L369.31,975.895L346.096,838.533L216.089,814.005L260.988,682.782L160.006,592.859L260.988,502.937L216.089,371.714L346.096,347.186L369.31,209.824L493.506,257.263L578.614,150.568Z" style="fill:rgb(132,167,253);stroke:rgb(132,167,253);stroke-width:17.93px;"/>
+    </g>
+</svg>

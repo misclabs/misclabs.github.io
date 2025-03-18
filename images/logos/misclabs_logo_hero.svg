@@ -1,55 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="256"
-   height="128"
-   viewBox="0 0 256 128"
-   version="1.1"
-   id="svg14465"
-   xml:space="preserve"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="misclabs_logo.svg"
-   inkscape:export-filename="misclabs_logo.png"
-   inkscape:export-xdpi="192"
-   inkscape:export-ydpi="192"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview14467"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="2.6532575"
-     inkscape:cx="122.11404"
-     inkscape:cy="110.61874"
-     inkscape:window-width="1350"
-     inkscape:window-height="1230"
-     inkscape:window-x="903"
-     inkscape:window-y="119"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg14465"
-     shape-rendering="crispEdges"><inkscape:grid
-       type="xygrid"
-       id="grid16270"
-       dotted="true" /></sodipodi:namedview><defs
-     id="defs14462" /><rect
-     style="display:inline;fill:#1a1a1a;fill-opacity:1"
-     id="bg"
-     width="256"
-     height="128"
-     x="0"
-     y="0" /><path
-     id="pink"
-     style="display:inline;fill:#ff5cff"
-     d="m 89,20 v 12 h 12 V 20 Z m 23,0 v 1 h -1 v 1 4 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 2 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -4 -1 h -1 v -1 h -3 v 1 h -1 v 1 h -2 v -1 h -1 v -1 z m -50,3 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 H 82 V 23 Z M 67,42 V 54 H 79 V 42 Z m 44,0 v 12 h 12 V 42 Z M 30,53 V 65 H 42 V 53 Z m -9,3 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 46,8 V 76 H 79 V 64 Z m 22,0 v 12 h 12 V 64 Z m 44,0 v 12 h 12 V 64 Z m 16,3 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 63,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 V 67 Z M 45,86 V 98 H 57 V 86 Z m 45,1 v 1 h -1 v 1 4 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 2 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -4 -1 h -1 v -1 h -3 v 1 h -1 v 1 h -2 v -1 h -1 v -1 z m -50,14 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z m 9,0 v 1 h -1 v 2 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -2 h -1 v -1 h -2 v 1 h -1 v -1 z" /><path
-     id="blue"
-     style="display:inline;fill:#67a9ff"
-     d="m 112,19 v 1 h 3 v -1 z m 3,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,0 h 1 v -1 h -1 z m 1,-1 h 3 v -1 h -3 z m 3,0 v 1 h 1 v -1 z m 1,1 v 5 h 1 v -5 z m 0,5 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -2 v 1 h 2 z m -2,0 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -5 h -1 v 5 z m 0,-5 h 1 v -1 h -1 z M 93,35 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 33,2 v 6 21 h 6 V 43 h 6 v 21 h 3 V 43 h 6 v 21 h 3 V 43 37 Z m 28,0 v 3 h 3 v 30 h -3 v 3 h 12 v -3 h -3 V 40 h 3 v -3 z m 15,0 v 3 12 h 6 11 v 18 h -11 v -3 h -6 v 3 3 h 17 4 V 52 49 h -15 v -9 h 15 v -3 z m 24,0 v 3 33 h 6 6 v -3 h -6 V 40 h 11 v 4 h 4 V 40 37 Z M 45,42 V 54 H 57 V 42 Z m 44,0 v 12 h 12 V 42 Z m -57,4 v 4 h 4 v -4 z m 6,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 V 46 Z M 68,57 v 4 h 4 v -4 z m 6,0 v 4 h 4 v -4 z m 41,0 v 4 h 4 V 57 Z M 45,64 V 76 H 57 V 64 Z m 66,0 v 12 h 12 V 64 Z m -73,4 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,0 v 4 h 4 v -4 z m 22,8 v 32 h 6 12 v -3 H 154 V 76 Z m 21,0 v 32 h 6 V 91 h 10 v 17 h 3 V 79 76 h -13 z m 22,0 v 32 h 6 12 3 V 91 88 h -4 v -9 -3 h -11 z m 24,0 v 3 12 h 6 11 v 14 h -11 v -3 h -6 v 3 3 h 17 4 V 91 88 h -15 v -9 h 15 V 76 Z M 49,79 v 4 h 4 v -4 z m 44,0 v 4 h 4 v -4 z m 82,0 h 10 v 9 h -10 z m 22,0 h 8 v 9 h -8 z M 90,86 v 1 h 3 v -1 z m 3,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,0 h 1 v -1 h -1 z m 1,-1 h 3 v -1 h -3 z m 3,0 v 1 h 1 v -1 z m 1,1 v 5 h 1 v -5 z m 0,5 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -1,1 h -2 v 1 h 2 z m -2,0 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -1 h -1 v 1 z m -1,-1 v -5 h -1 v 5 z m 0,-5 h 1 v -1 h -1 z m 108,3 h 12 v 14 h -12 z" /></svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1080 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect x="0" y="0" width="1080" height="1080" style="fill:rgb(20,20,20);"/>
+    <g id="Atom">
+        <g id="Electron">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+        <g id="Electron1" serif:id="Electron" transform="matrix(-0.5,-0.866025,0.866025,-0.5,342.346,1277.65)">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+        <g id="Electron2" serif:id="Electron" transform="matrix(-0.5,0.866025,-0.866025,-0.5,1277.65,342.346)">
+            <g transform="matrix(1.16703,0,0,1.16703,-219.16,-43.3523)">
+                <ellipse cx="650.506" cy="499.861" rx="110.506" ry="399.197" style="fill:none;stroke:rgb(233,110,253);stroke-width:12.85px;"/>
+            </g>
+            <g transform="matrix(3.29728,-10.4444,10.4444,3.29728,173.968,903.811)">
+                <path d="M12.629,36.11C13.416,34.718 14.99,34.718 15.777,35.414C16.564,36.11 16.564,37.503 15.777,38.896C15.226,39.94 13.81,40.984 12.629,41.681C11.448,40.984 10.032,39.94 9.481,38.896C8.694,37.503 8.694,36.11 9.481,35.414C10.268,34.718 11.842,34.718 12.629,36.11Z" style="fill:rgb(233,110,253);"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(0.833346,0,0,0.788721,57.8148,72.3994)">
+        <path d="M578.614,150.568L663.721,257.263L787.917,209.824L811.132,347.186L941.138,371.714L896.239,502.937L997.221,592.859L896.239,682.782L941.138,814.005L811.132,838.533L787.917,975.895L663.721,928.455L578.614,1035.15L493.506,928.455L369.31,975.895L346.096,838.533L216.089,814.005L260.988,682.782L160.006,592.859L260.988,502.937L216.089,371.714L346.096,347.186L369.31,209.824L493.506,257.263L578.614,150.568Z" style="fill:rgb(20,20,20);"/>
+    </g>
+    <g transform="matrix(0.744599,0,0,0.704727,109.165,122.196)">
+        <path d="M578.614,150.568L663.721,257.263L787.917,209.824L811.132,347.186L941.138,371.714L896.239,502.937L997.221,592.859L896.239,682.782L941.138,814.005L811.132,838.533L787.917,975.895L663.721,928.455L578.614,1035.15L493.506,928.455L369.31,975.895L346.096,838.533L216.089,814.005L260.988,682.782L160.006,592.859L260.988,502.937L216.089,371.714L346.096,347.186L369.31,209.824L493.506,257.263L578.614,150.568Z" style="fill:rgb(20,20,20);stroke:rgb(233,110,253);stroke-width:17.93px;"/>
+    </g>
+    <g transform="matrix(4.12085,0,0,4.12085,348.757,376.585)">
+        <text x="2.659px" y="34.665px" style="font-family:'HoneyblotCaps', 'Honeyblot Caps';font-size:38.836px;fill:rgb(132,167,253);">Misc</text>
+        <g transform="matrix(38.8364,0,0,38.8364,90.1579,73.5015)">
+        </g>
+        <text x="2.659px" y="73.502px" style="font-family:'HoneyblotCaps', 'Honeyblot Caps';font-size:38.836px;fill:rgb(132,167,253);">Lab<tspan x="67.905px " y="73.502px ">s</tspan></text>
+    </g>
+</svg>
